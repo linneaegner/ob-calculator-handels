@@ -17,10 +17,10 @@ export function LanguageSwitcher() {
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
         <DropdownMenuItem onClick={() => setLanguage("sv")}>
-          <span className={language === "sv" ? "font-bold" : ""}>Swedish</span>
+          <span className={language === "sv" ? "font-bold" : ""}>Svenska</span>
         </DropdownMenuItem>
         <DropdownMenuItem onClick={() => setLanguage("en")}>
-          <span className={language === "en" ? "font-bold" : ""}>Engelska</span>
+          <span className={language === "en" ? "font-bold" : ""}>English</span>
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
