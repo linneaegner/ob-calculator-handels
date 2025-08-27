@@ -17,5 +17,7 @@ export default function RootLayout({
 }
 
 export const metadata = {
-      generator: 'v0.dev'
-    };
+  title: 'OB Löneberäknare – Räkna ut lön med OB-tillägg',
+  description: 'Beräkna din lön inklusive OB-tillägg enligt Handels kollektivavtal. Välj arbetsområde, ange tid och lön, och få snabb beräkning!',
+  generator: 'v0.dev',
+};
