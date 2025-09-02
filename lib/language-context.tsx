@@ -39,7 +39,7 @@ const translations = {
     "result.workedHours": "Arbetade timmar",
     "result.basePay": "Grundlön",
     "result.obAdditions": "OB-tillägg",
-    "footer.disclaimer": "Informationen baseras på Handels avtal 2024. Kontrollera alltid din lönespecifikation. Vi reserverar oss för eventuella fel.",
+    "footer.disclaimer": "Informationen baseras på Handels avtal 2025. Kontrollera alltid din lönespecifikation. Vi reserverar oss för eventuella fel.",
   },
   en: {
     "page.title": "What will you earn for your shift?",
@@ -70,7 +70,7 @@ const translations = {
     "result.workedHours": "Worked Hours",
     "result.basePay": "Base Pay",
     "result.obAdditions": "Inconvenient Hours Supplements",
-    "footer.disclaimer": "Based on the 2024 Handels agreement. Always check your payslip. We disclaim responsibility for any errors.",
+    "footer.disclaimer": "Based on the 2025 Handels agreement. Always check your payslip. We disclaim responsibility for any errors.",
   },
 }
 
