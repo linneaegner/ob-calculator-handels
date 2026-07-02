@@ -9,6 +9,8 @@
     "build": "pnpm --filter @passbyte/web build",
     "start": "pnpm --filter @passbyte/web start",
     "test": "pnpm --filter @passbyte/handels test",
+    "check:handels": "pnpm --filter @passbyte/handels check:sources",
+    "check:handels:update": "pnpm --filter @passbyte/handels check:sources:update",
     "lint": "pnpm --filter @passbyte/web lint"
   }
 }

@@ -1,0 +1,28 @@
+{
+  "sources": [
+    {
+      "id": "avtal-butik-lager-e-handel",
+      "url": "https://www.handels.se/avtalsrorelse/avtal-butik-lager-e-handel/",
+      "description": "Löneökningar och avtalsnyheter för butik, lager och e-handel",
+      "codePaths": ["config.ts", "minimum-wage.ts"]
+    },
+    {
+      "id": "roda-dagar",
+      "url": "https://www.handels.se/fakta-och-rad/lon-ob/roda-dagar/",
+      "description": "Röda dagar och storhelgsaftnar per år",
+      "codePaths": ["holidays/", "config.ts"]
+    },
+    {
+      "id": "ob-tillagg",
+      "url": "https://www.handels.se/fakta-och-rad/lon-ob/ob-tillagg/",
+      "description": "OB-procent och tidsfönster för butik och lager",
+      "codePaths": ["ob/segments-butik.ts", "ob/segments-lager.ts"]
+    },
+    {
+      "id": "laegstaloener-faq",
+      "url": "https://www.handels.se/fakta-och-rad/faq/g652-vilka-laegstaloener-gaeller-i-min-bransch",
+      "description": "FAQ om lägstalöner (detaljer ofta bakom Mina sidor)",
+      "codePaths": ["minimum-wage.ts"]
+    }
+  ]
+}
