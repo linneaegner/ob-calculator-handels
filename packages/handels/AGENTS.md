@@ -4,7 +4,7 @@ Use this playbook when Handels public web pages change and `packages/handels/` n
 
 ## When to run
 
-- Quarterly source check failed (GitHub Action **Handels sources** or `pnpm check:handels`)
+- Twice-yearly source check failed (GitHub Action **Handels sources** or `pnpm check:handels`)
 - Manual request to sync with [handels.se](https://www.handels.se)
 - New agreement period (next major one: from April 2027)
 
@@ -55,14 +55,27 @@ Do **not** auto-merge. A human should review before release.
 
 Bootstrap snapshots (agreement excerpts only): `pnpm --filter @passbyte/handels seed:snapshots`
 
-## Cursor Automation prompt (quarterly)
+## Cursor Automation (twice a year)
+
+Create at [cursor.com/automations/new](https://cursor.com/automations/new):
+
+| Setting | Value |
+| --- | --- |
+| **Name** | Handels agreement check |
+| **Trigger** | Scheduled |
+| **Cron** | `0 9 1 1,4 *` |
+| **When** | January 1 and April 1 at 09:00 UTC |
+| **Repository** | `linneaegner/passbyte-kalkylator` (branch `main`) |
+
+**Prompt:**
 
 ```
 Check whether Handels public pages for butik/lager/e-handel have changed.
 
 1. Run: pnpm check:handels
 2. If exit code 0, stop — no PR needed.
-3. If changed, follow packages/handels/AGENTS.md:
+3. If exit code 2 (handels.se blocked), fetch the source URLs from packages/handels/sources.json via web access, compare against packages/handels/snapshots/, and continue only if agreement content changed.
+4. If changed, follow packages/handels/AGENTS.md:
    - Read changed sources from sources.json and snapshots/
    - Update packages/handels/ code and tests
    - Run pnpm test
@@ -70,4 +83,6 @@ Check whether Handels public pages for butik/lager/e-handel have changed.
    - Open a draft PR describing changes with links to handels.se
 ```
 
-Schedule: cron `0 9 1 1,4,7,10 *` (Jan 1, Apr 1, Jul 1, Oct 1 at 09:00 UTC). Use monthly schedule from late 2026 during the 2027 agreement negotiation.
+Use a monthly schedule from late 2026 during the 2027 agreement negotiation.
+
+Full copy-paste config: `.cursor/automations/handels-agreement-check.md`
