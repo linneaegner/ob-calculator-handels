@@ -7,9 +7,13 @@
     ".": "./index.ts"
   },
   "scripts": {
-    "test": "vitest run"
+    "test": "vitest run",
+    "check:sources": "tsx scripts/check-handels-sources.ts",
+    "check:sources:update": "tsx scripts/check-handels-sources.ts --update",
+    "seed:snapshots": "tsx scripts/seed-snapshots.ts"
   },
   "devDependencies": {
+    "tsx": "^4.20.3",
     "typescript": "^5",
     "vitest": "^3.2.4"
   }
