@@ -29,6 +29,7 @@ Check whether Handels public pages for butik/lager/e-handel have changed.
    - Run pnpm test
    - Run pnpm check:handels:update and commit snapshot updates with code
    - Open a draft PR describing changes with links to handels.se
+   - Do NOT merge the PR — a human must review first (see AGENTS.md)
 ```
 
 ## What the agent does
@@ -36,7 +37,7 @@ Check whether Handels public pages for butik/lager/e-handel have changed.
 1. Runs `pnpm check:handels` to compare live Handels pages with committed snapshots.
 2. Stops if nothing changed (exit code 0).
 3. If handels.se blocks server fetch (exit code 2), uses web access to read the pages instead.
-4. Updates `packages/handels/`, runs tests, refreshes snapshots, and opens a **draft PR** for human review.
+4. Updates `packages/handels/`, runs tests, refreshes snapshots, and opens a **draft PR** for human review. The agent must not merge the PR.
 
 ## Related
 

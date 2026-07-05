@@ -81,6 +81,7 @@ Check whether Handels public pages for butik/lager/e-handel have changed.
    - Run pnpm test
    - Run pnpm check:handels:update and commit snapshot updates with code
    - Open a draft PR describing changes with links to handels.se
+   - Do NOT merge the PR — a human must review first (see AGENTS.md)
 ```
 
 Use a monthly schedule from late 2026 during the 2027 agreement negotiation.
