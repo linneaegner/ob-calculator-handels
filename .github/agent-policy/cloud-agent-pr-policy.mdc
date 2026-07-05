@@ -1,0 +1,12 @@
+---
+description: Cloud agent pull request policy — no auto-merge
+alwaysApply: true
+---
+
+# Pull request policy
+
+- **Never merge pull requests.** Do not call merge APIs, enable GitHub auto-merge, approve your own PR, or mark a draft PR ready for review unless the user explicitly requests it.
+- **Always open draft PRs** for human review before anything lands on the default branch.
+- After pushing and opening/updating the PR, **stop**. The human reviewer merges when ready.
+
+See `AGENTS.md` for repo-specific commands and playbooks.

@@ -1,0 +1,42 @@
+name: Configure account — no auto-merge
+
+# One-time (or occasional) setup: apply GitHub settings + agent policy files to every repo.
+#
+# Before running:
+# 1. Create a fine-grained PAT with Administration (read/write) on all your repos.
+# 2. Add it as repository secret GH_ADMIN_TOKEN (Settings → Secrets → Actions).
+# 3. Actions → this workflow → Run workflow.
+
+on:
+  workflow_dispatch:
+    inputs:
+      sync_agent_files:
+        description: Open PRs adding AGENTS.md + .cursor/rules to other repos
+        type: boolean
+        default: true
+      dry_run:
+        description: Print actions without changing GitHub
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+jobs:
+  configure:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Configure all personal repositories
+        env:
+          GH_TOKEN: ${{ secrets.GH_ADMIN_TOKEN }}
+          DRY_RUN: ${{ inputs.dry_run && '1' || '0' }}
+          SYNC_AGENT_FILES: ${{ inputs.sync_agent_files && '1' || '0' }}
+        run: |
+          if [[ -z "${GH_TOKEN}" ]]; then
+            echo "::error::Add repository secret GH_ADMIN_TOKEN (fine-grained PAT with repo Administration)."
+            exit 1
+          fi
+          chmod +x scripts/configure-github-no-automerge-all-repos.sh
+          ./scripts/configure-github-no-automerge-all-repos.sh

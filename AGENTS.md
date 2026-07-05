@@ -35,3 +35,13 @@ This repo calculates wages from collective agreements. Incorrect merges can affe
 Cloud agents run in an isolated VM. Use the commands above; no extra secrets are required for tests and builds.
 
 If you need to override the no-merge policy for a one-off task, the user must say so explicitly in the prompt (e.g. "merge when CI passes"). Default is always human review.
+
+## Account-wide setup (all GitHub repos)
+
+To apply the same GitHub settings and agent policy files across every personal repository, run once:
+
+```bash
+./scripts/configure-github-no-automerge-all-repos.sh
+```
+
+Or use the **Configure account — no auto-merge** GitHub Action (requires `GH_ADMIN_TOKEN` secret). See `.github/workflows/configure-account-no-automerge.yml`.
