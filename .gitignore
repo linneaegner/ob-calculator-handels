@@ -32,3 +32,7 @@ next-env.d.ts
 
 # Custom ignores / My notes
 mina_anteckningar.md
+# editor / tooling
+.cursor/
+.vscode/
+.DS_Store
